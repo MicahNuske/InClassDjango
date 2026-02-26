@@ -1,5 +1,7 @@
 from django.urls import include, re_path
 import MyApp.views
+from django.contrib import admin
+from django.urls import path
 
 """
 InClassDjango URL Configuration
@@ -25,7 +27,7 @@ Including another URLconf
 
 urlpatterns = [
     # Uncomment the next line to enable the admin:
-    #path('admin/', admin.site.urls)
+    path('admin/', admin.site.urls),
     re_path(r'^$', MyApp.views.index, name='index'),
     re_path(r'^home$', MyApp.views.index, name='home')
 ]
