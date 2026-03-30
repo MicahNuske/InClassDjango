@@ -41,12 +41,19 @@
     </Compile>
     <Compile Include="MyApp\migrations\__init__.py" />
     <Compile Include="MyApp\models.py" />
+    <Compile Include="MyApp\forms.py">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="MyApp\removeDuplicates.py">
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Include="MyApp\tests.py" />
     <Compile Include="MyApp\views.py" />
     <Compile Include="MyApp\__init__.py" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="MyApp\templates\MyApp\index.html" />
+    <Content Include="MyApp\templates\MyApp\input.html" />
     <Content Include="requirements.txt" />
   </ItemGroup>
   <ItemGroup>
