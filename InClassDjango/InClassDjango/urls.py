@@ -1,4 +1,5 @@
 from django.urls import include, re_path
+from MyApp import views
 import MyApp.views
 from django.contrib import admin
 from django.urls import path
@@ -30,5 +31,7 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     re_path(r'^$', MyApp.views.index, name='index'),
     re_path(r'^home$', MyApp.views.index, name='home'),
-    re_path(r'input', MyApp.views.input_view, name='input')
+    re_path(r'input', MyApp.views.input_view, name='input'),
+    path('delete/<int:id>', MyApp.views.delete, name='delete'),
+    path('report/', MyApp.views.report, name='report'),
 ]

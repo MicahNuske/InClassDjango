@@ -11,16 +11,81 @@
             <th>Name</th>
             <th>Teaching Area</th>
         </tr>
-        {% for teach in content %}
-        <tr>
-            <td>{{teach.Name}}</td>
-            <td>{{teach.Area}}</td>
-        </tr>
-        {% endfor %}
+        <table border="1">
+            {% for teach in content %}
+            <tr>
+                <td>{{teach.id}}</td>
+                <td>{{teach.Name}}</td>
+                <td>{{teach.Area}}</td>
+                <td><a href="delete/{{ teach.id }}">delete</a></td>
+            </tr>
+            {% endfor %}
+        </table>
     </table>
     {% else %}
     <strong>No Data!!</strong>
     {%endif%}
     <p><a href="{% url 'input' %}">Input New Teachers</a></p>
+    <p><a href="{% url 'report' %}">Download pdf</a></p>
+</body>
+</html>
+
+<html>
+<head>
+<style>
+    .flex-table {
+        display: flex;
+        flex-direction: column;
+        flex-wrap: wrap;
+        width: 100%;
+    }
+
+    .flex-row {
+        display: flex; /* Arrange cells horizontally */
+        width: 100%;
+        border-bottom: 1px solid #ddd;
+
+    }
+
+    .header {
+        font-weight: bold;
+        background-color: #f4f4f4;
+
+    }
+    
+    .flex-cell {
+        flex: 1; /* Distribute space equally among cells */
+        padding: 10px;
+        border-right: 1px solid #ddd;
+
+    }
+
+    .flex-cell:last-child {
+        border-right: none;
+
+    }
+
+</style>
+</head>
+<body>
+
+<h1>Create a Flex Container</h1>
+
+<div class="flex-table">
+    <div class="flex-row header">
+        <div class="flex-cell">ID</div>
+        <div class="flex-cell">Name</div>
+        <div class="flex-cell">Area</div>
+    </div>
+
+    {% for teach in content %}
+    <div class="flex-row">
+        <div class="flex-cell">{{teach.id}}</div>
+        <div class="flex-cell">{{teach.Name}}</div>
+        <div class="flex-cell">{{teach.Area}}</div>
+    </div>
+    {% endfor %}
+</div>
+
 </body>
 </html>

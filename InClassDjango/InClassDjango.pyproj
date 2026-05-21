@@ -52,8 +52,12 @@
     <Compile Include="MyApp\__init__.py" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="MyApp\templates\MyApp\inputcourse.html" />
+    <Content Include="static\DS.pdf" />
+    <Content Include="static\site.css" />
     <Content Include="MyApp\templates\MyApp\index.html" />
     <Content Include="MyApp\templates\MyApp\input.html" />
+    <Content Include="MyApp\templates\MyApp\layout.html" />
     <Content Include="requirements.txt" />
   </ItemGroup>
   <ItemGroup>
@@ -62,6 +66,7 @@
     <Folder Include="MyApp\management\commands\" />
     <Folder Include="MyApp\migrations\" />
     <Folder Include="MyApp\management\" />
+    <Folder Include="static\" />
     <Folder Include="MyApp\templates\" />
     <Folder Include="MyApp\templates\MyApp\" />
   </ItemGroup>
